@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/tela4.dart';
+
+class tela3 extends StatelessWidget {
+  const tela3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tela 3'),
+        automaticallyImplyLeading: false,
+        ),
+        body: Center(child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OutlinedButton(
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const tela4()),
+              );
+            },
+            child: Text('Abrir'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Voltar'),
+            ),
+          ],
+        ),),
+    );
+  }
+}
