@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/tela3.dart';
+
+class tela2 extends StatelessWidget {
+  const tela2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tela 2'),
+        automaticallyImplyLeading: false,
+        ),
+        body: Container(
+
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('lib/Assets/imagem.jpg'),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+              Colors.white.withOpacity(0.6),
+              BlendMode.dstATop,
+              ),
+            ),
+          ),
+
+          child: Center(child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OutlinedButton(
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const tela3()),
+                );
+              },
+              child: Text('Abrir'),
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text('Voltar'),
+              ),
+            ],
+          ),),
+        ),
+    );
+  }
+}
