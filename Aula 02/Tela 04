@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+class tela4 extends StatelessWidget {
+  const tela4({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tela 4'),
+        automaticallyImplyLeading: false,
+        ),
+        body: Center(child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OutlinedButton(
+            onPressed: () {
+              Navigator.of(context).popUntil(
+                ModalRoute.withName('t1'),
+              );
+            },
+            child: Text('Início'),
+            )
+          ],
+        ),),
+    );
+  }
+}
